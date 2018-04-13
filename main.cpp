@@ -56,8 +56,6 @@ public:
 	}
 
 	void insert_last(int value) {
-		node *current = new node;
-		node *previous = new node;
 		node *temp = new node;
 		temp->curData = value;
 		if (head == NULL) {
@@ -65,7 +63,8 @@ public:
 			head = temp;
 			tail = temp;
 		} else {
-			current = head;
+			node *current = head;
+			node *previous = new node;
 			while (current->nextData != NULL) {
 				previous = current;
 				current = current->nextData;
