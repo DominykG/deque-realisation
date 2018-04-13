@@ -83,9 +83,7 @@ public:
 			head = NULL;
 			tail = NULL;
 		} else {
-			//node *temp = head;
 			head = head->nextData;
-			//delete temp;
 		}
 	}
 
