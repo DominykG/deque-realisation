@@ -33,13 +33,15 @@ public:
 
 	void display() {
 		if (empty() == true) {
-			cout << "Deque is empty. Try another option.\n";
+			cout << "Deque is currently empty.\n";
 		} else {
 			node *temp = head;
+	    cout << "----------CONTENT----------\n";
 			while (temp != NULL) {
 				cout << temp->curData << "  ";
 				temp = temp->nextData;
 			}
+			cout << "\n---------------------------\n";
 			cout << endl;
 		}
 	}
@@ -55,6 +57,7 @@ public:
 			temp->nextData = head;
 			head = temp;
 		}
+		display();
 	}
 
 	void insert_last(int value) {
@@ -76,22 +79,24 @@ public:
 			current->nextData = temp;
 			tail = temp;
 		}
+		display();
 	}
 
 	void delete_first() {
 		if (empty() == true) {
-			cout << "Deque is empty. Try another option.\n";
+			cout << "Deque is currently empty.\n";
 		} else if (tail == head && head->nextData == NULL) {
 			head = NULL;
 			tail = NULL;
 		} else {
 			head = head->nextData;
+			display();
 		}
 	}
 
 	void delete_last() {
 		if (empty() == true) {
-			cout << "Deque is empty. Try another option.\n";
+			cout << "Deque is currently empty.\n";
 		} else if (tail == head && head->nextData == NULL) {
 			head = NULL;
 			tail = NULL;
@@ -105,12 +110,13 @@ public:
 			tail = previous;
 			previous->nextData = NULL;
 			delete current;
+			display();
 		}
 	}
 
 	void print_first_and_last() {
 		if (empty() == true) {
-			cout << "Deque is empty. Try another option.\n";
+			cout << "Deque is currently empty.\n";
 		} else {
 			cout << "First element: " << head->curData
 				 << "\nLast element: " << tail->curData << endl;
