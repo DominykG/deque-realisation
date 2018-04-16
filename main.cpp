@@ -21,6 +21,8 @@ public:
 		tail = NULL;
 	}
 
+	~My_deque() {}
+
 	bool empty() {
 		if (head == NULL && tail == NULL) {
 			return true;
